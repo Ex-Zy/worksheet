@@ -3,9 +3,9 @@
 //     .whatever
 // 			+s(codedby) 
 // ## gradient example
-//     	+g(#232323, #5c5c5c);
+//     	+g(#232323, #5c5c5c)
 //	   horizontal
-//     	+gh(#232323, #5c5c5c);
+//     	+gh(#232323, #5c5c5c)
 // ## making bw-images
 //     img
 //			@extend %gray
@@ -17,7 +17,7 @@
 // ## use cycles
 //     @for $i from 1 through 3
 //       .item-#{$i}
-//			width: 2em * $i;
+//			width: 2em * $i
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
@@ -28,9 +28,334 @@
 // =book
 // 	font-family: "book", Arial, sans-serif
 
+//vars
+$color-primary: #1c1c1c
+$color-white: #fff
+$color-black: #000
+$color-placeholder: #c8c8c8
+$color-link: #435993
+
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
+	font-family: 'Roboto', sans-serif
+	font-size: 16px
+	font-weight: 300
 	line-height: 1.4
+	color: $color-primary
+	background-color: $color-white
+	+font-smoothing
 	
-// common blocks
+a
+	color: inherit
+	font-size: 14px
+	font-weight: inherit
+	font-family: inherit  
+	transition: all 0.3s
+	text-decoration: none
+	
+.btn-menu 
+	width: 44px
+	height: 34px
+	cursor: pointer
+	display: none
+	z-index: 20
+	+hide-text
+	background: none
+	position: absolute
+	top: 0
+	right: 0
+	+r(768)
+		width: 35px
+	span
+		transition: background 0s .3s
+		width: 100%
+		height: 5px
+		background-color: $color-primary
+		+tr(all .3s ease-in-out)
+		position: relative
+		display: inline-block
+		margin-top: 14px
+		+r(768)
+			height: 3px
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			width: 100%
+			height: 5px
+			background-color: $color-primary
+			-webkit-transition-duration: .3s,.3s
+			transition-duration: .3s,.3s
+			-webkit-transition-delay: .3s,0s
+			transition-delay: .3s,0s
+			+r(768)
+				height: 3px
+		&:before
+			top: 14px
+			transition-property: top,transform
+			+r(768)
+				top: 10px
+		&:after
+			top: -14px
+			transition-property: top,transform
+			+r(768)
+				top: -10px
+	&.is-active
+		span
+			background: transparent
+			&:before,
+			&:after
+				transition-delay: 0s,.3s
+			&:before
+				top: 0
+				transform: rotate(45deg)
+			&:after
+				top: 0
+				transform: rotate(-45deg)
+
+.btn
+	width: 115px
+	line-height: 46px
+	height: 50px
+	border-radius: 10px
+	background-color: $color-link
+	font-size: 16px
+	font-weight: 300
+	color: #fff
+	transition: background-color 0.3s
+	position: relative
+	&:hover
+		background-color: lighten($color-link, 5%)
+	&:active
+		top: 1px
+
+.title-primary
+	font-size: 70px
+	color: $color-black
+	font-weight: 100
+
+.title-secondary
+	font-size: 30px
+	font-weight: 300 
+
+.input
+	line-height: 70px
+	height: 60px
+	border-radius: 5px
+	border: 1px solid #e5e5e5
+	font-weight: 400
+	font-size: 20px
+	padding: 0 15px
+	width: 100%
+	color: $color-primary
+	text-align: center
+
+.inner
+	max-width: 770px
+	margin: 0 auto
+	position: relative
+	
+.out
+	position: relative
+	z-index: 1
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 80px
+		left: 0
+		right: 0
+		background: url(../img/bg.jpg) no-repeat center
+		background-size: cover
+		height: 161px
+		z-index: -1
+
+.form-row
+	&:not(:first-of-type)
+		padding: 25px 0 0
+	
+.form-group
+	position: relative
+	max-width: 520px
+	margin: 0 auto	
+	&__label
+		+vcenter
+		font-size: 24px
+		font-weight: 400
+		color: $color-placeholder
+		pointer-events: none
+		transition: all 0.3s
+	&.is-focused
+		.form-group__label
+			font-size: 14px
+			top: 25%
+
+.skills-list
+	text-align: left
+	column-count: 3
+	margin: -15px 0 0
+	&__item
+		margin: 15px 0 0
+	&__label
+		cursor: pointer
+		span
+			padding: 0 0 0 32px
+			position: relative
+			display: block
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				transition: background 0.3s
+				width: 20px
+				height: 20px
+				background: url(../img/no-checked.png) no-repeat center
+		input
+			display: none
+			&:checked
+				~ span
+					&:before
+						background: url(../img/checked.png) no-repeat center
+		&:hover
+			span
+				&:before
+					background: url(../img/checked-hover.png) no-repeat center
+
+.info
+	margin: 0 auto
+	max-width: 500px
+	&__txt
+		font-weight: 300
+		font-size: 16px
+	&__area
+		@extend .input
+		resize: none
+		text-align: left
+		padding: 8px
+		line-height: 1.4
+		height: 180px
+		margin: 40px 0 0
+	&__btn
+		display: block
+		margin: 70px auto 0
+
+
+//custom select
+.select
+	max-width: 320px
+	margin: 0 auto
+	padding: 0
+	position: relative
+	&.is-open 
+		.select__list
+			display: block
+	&__text
+		background-color: $color-white 
+		color: $color-placeholder
+		padding: 0 10px
+		font-size: 20px
+		border: 1px solid #e5e5e5
+		display: block
+		position: relative
+		cursor: pointer
+		height: 60px
+		line-height: 56px
+		border-radius: 5px
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			margin-top: -3px
+			right: 20px
+			border: 6px solid transparent
+			border-top: 6px solid #444
+			z-index: 1
+			user-select: none
+
+	&__list
+		display: none
+		list-style: none
+		position: absolute
+		left: 0
+		right: 0
+		top: 100%
+		margin-top: 4px
+		border: 1px solid #e2e2e2
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2)
+		overflow-x: hidden
+		overflow-y: auto
+		z-index: 10
+		height: 300px
+		padding: 30px 0
+		background-color: $color-white 
+
+	li
+		padding: 0px 10px
+		cursor: pointer
+		background-color: #fff
+		transition: background-color 0.3s
+		color: $color-link
+		font-size: 20px
+		font-weight: 300
+		line-height: 1.2
+		&:hover
+			background-color: #f2f2f2
+
+//custom slider
+.slider
+	position: relative
+	font-size: 13px
+	width: 100%
+	&__item
+		position: absolute
+		bottom: 100%
+		margin: 0 0 10px
+		width: 25%
+		text-align: left
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 100%
+			left: 0
+			width: 1px
+			height: 25px
+			z-index: 5
+			background: url(../img/separator.png) no-repeat center
+			margin: 5px 0 0
+		&:nth-of-type(1)
+			left: 0
+		&:nth-of-type(2)
+			left: 25%
+		&:nth-of-type(3)
+			left: 50%
+		&:nth-of-type(4)
+			left: 75%
+			text-align: right
+			&:after
+				left: auto
+				right: 0
+	&__track
+		overflow: hidden
+		height: 14px
+		background: #435993 linear-gradient(to right, #ccb1f1 0%, #435993 100%)
+		position: relative
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: #fff
+			height: 50px
+			transform: rotate(-0.8deg) translateY(-2px)
+			transform-origin: 0 100%
+	&__pointer
+		width: 23px
+		height: 26px
+		background: url(../img/pointer.png) no-repeat center
+		cursor: pointer

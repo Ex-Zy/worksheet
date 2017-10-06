@@ -11,10 +11,6 @@
 <body>
 <!-- BEGIN  out-->
 <div class="out">
-	<i class="icon-sepa"></i>
-	//=include partials/partial.html
-
-
 	<header class="header">
 		<div class="inner">
 			<ul class="header-list">
@@ -23,155 +19,157 @@
 				<li class="header-list__item"><a href="#" class="header-list__link">JavaScript</a></li>
 				<li class="header-list__item"><a href="#" class="header-list__link">О себе</a></li>
 			</ul>
-			<button type="button" class="btn-menu js-menu" hidden>Меню</button>
+			<button type="button" class="btn-menu js-menu">
+				<span>Меню</span>
+			</button>
 		</div>
 	</header>
 	<div class="form">
-		<form action="/" method="POST">
-			<h1 class="form__title-primary title-primary">Анекета</h1>
-			<dl class="list">
-				<dt class="list__title">Личная информация</dt>
-				<dd class="list__content">
-					<div class="row">
-						<div class="form-group">
-							<label class="form-group__label">ФИО</label>
-							<input type="text" class="form-group__input input">
+		<form action="/">
+			<div class="inner">
+				<h1 class="form__title-primary title-primary">Анкета</h1>
+				<dl class="list">
+					<dt class="list__title title-secondary">Личная информация</dt>
+					<dd class="list__content">
+						<div class="form-row">
+							<div class="form-group is-focused is-completed">
+								<label class="form-group__label">ФИО</label>
+								<input type="text" class="form-group__input input js-input" value="Сергей Нагорных">
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="select js-select">
-							<h3 class="select__title js-select-title"></h3>
-							<ul class="select-list">
-								<li class="select-list__item">1970</li>
-								<li class="select-list__item">1971</li>
-								<li class="select-list__item">1972</li>
-								<li class="select-list__item">1973</li>
-								<li class="select-list__item">1974</li>
-								<li class="select-list__item">1975</li>
-								<li class="select-list__item">1976</li>
-								<li class="select-list__item">1977</li>
-								<li class="select-list__item">1978</li>
-								<li class="select-list__item">1979</li>
-								<li class="select-list__item">1980</li>
-								<li class="select-list__item">1980</li>
-								<li class="select-list__item">1981</li>
-								<li class="select-list__item">1982</li>
-								<li class="select-list__item">1983</li>
-								<li class="select-list__item">1984</li>
-								<li class="select-list__item">1985</li>
-								<li class="select-list__item">1986</li>
-								<li class="select-list__item">1987</li>
-								<li class="select-list__item">1988</li>
-								<li class="select-list__item">1989</li>
-								<li class="select-list__item">1990</li>
-								<li class="select-list__item">1990</li>
-								<li class="select-list__item">1991</li>
-								<li class="select-list__item">1992</li>
-								<li class="select-list__item">1993</li>
-								<li class="select-list__item">1994</li>
-								<li class="select-list__item">1995</li>
-								<li class="select-list__item">1996</li>
-								<li class="select-list__item">1997</li>
-								<li class="select-list__item">1998</li>
-								<li class="select-list__item">1999</li>
-								<li class="select-list__item">2000</li>
-							</ul>
+						<div class="form-row">
+							<select class="select-default" data-placeholder="Год рождения" style="display: none;">
+								<option value="1970">1970</option>
+								<option value="1971">1971</option>
+								<option value="1972">1972</option>
+								<option value="1973">1973</option>
+								<option value="1974">1974</option>
+								<option value="1975">1975</option>
+								<option value="1976">1976</option>
+								<option value="1977">1977</option>
+								<option value="1978">1978</option>
+								<option value="1979">1979</option>
+								<option value="1980">1980</option>
+								<option value="1980">1980</option>
+								<option value="1981">1981</option>
+								<option value="1982">1982</option>
+								<option value="1983">1983</option>
+								<option value="1984">1984</option>
+								<option value="1985">1985</option>
+								<option value="1986">1986</option>
+								<option value="1987">1987</option>
+								<option value="1988">1988</option>
+								<option value="1989">1989</option>
+								<option value="1990">1990</option>
+								<option value="1990">1990</option>
+								<option value="1991">1991</option>
+								<option value="1992">1992</option>
+								<option value="1993" selected>1993</option>
+								<option value="1994">1994</option>
+								<option value="1995">1995</option>
+								<option value="1996">1996</option>
+								<option value="1997">1997</option>
+								<option value="1998">1998</option>
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
+							</select>
 						</div>
-					</div>
-					<div class="row">
-						<div class="form-group">
-							<label class="form-group__label">Место проживания</label>
-							<input type="text" class="form-group__input input">
+						<div class="form-row">
+							<div class="form-group is-focused is-completed">
+								<label class="form-group__label">Место проживания</label>
+								<input type="text" class="form-group__input input js-input" value="Киев">
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="form-group">
-							<label class="form-group__label">Skype</label>
-							<input type="text" class="form-group__input input">
+						<div class="form-row">
+							<div class="form-group is-focused is-completed">
+								<label class="form-group__label">Telegram</label>
+								<input type="text" class="form-group__input input js-input" value="+380632503145">
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="form-group">
-							<label class="form-group__label">E-mail</label>
-							<input type="text" class="form-group__input input">
+						<div class="form-row">
+							<div class="form-group is-focused is-completed">
+								<label class="form-group__label">E-mail</label>
+								<input type="text" class="form-group__input input js-input" value="serg.extazy@gmail.com">
+							</div>
 						</div>
-					</div>
-				</dd>
-				<dt class="list__title">Расскажите о своем опыте</dt>
-				<dd class="list__content">
-					<ul class="skills-list">
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>БЭМ/OOCSS</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Stylus/LESS/SASS</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Работаю с SVG</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Верстаю семантично</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>ES2015/ES2016</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Gulp/GRUNT</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Webpack</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>jQuery</span>
-							</label>
-						</li>
-						<li class="skills-list__item">
-							<label for="" class="skills-list__label">
-								<input type="checkbox">
-								<span>Ипользую Git</span>
-							</label>
-						</li>
+					</dd>
+					<dt class="list__title title-secondary">Расскажите о своем опыте</dt>
+					<dd class="list__content">
+						<ul class="skills-list">
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>БЭМ/OOCSS</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Stylus/LESS/SASS</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Работаю с SVG</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Верстаю семантично</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>ES2015/ES2016</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Gulp/GRUNT</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Webpack</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>jQuery</span>
+								</label>
+							</li>
+							<li class="skills-list__item">
+								<label class="skills-list__label">
+									<input type="checkbox">
+									<span>Ипользую Git</span>
+								</label>
+							</li>
 
-					</ul>
-				</dd>
-				<dt class="list__title">Уровень владения JavaScript</dt>
-				<dd class="list__content"></dd>
-				<dt class="list__title">Расскажите о себе</dt>
-				<dd class="list__content">
-					<div class="info">
-						<div class="info__txt">
-							Напишите несколько предложений, чем привлекла наша вакансия
-							и что вы ожидаете от работы у нас.
+						</ul>
+					</dd>
+					<dt class="list__title title-secondary">Уровень владения JavaScript</dt>
+					<dd class="list__content">
+						<div class="slider js-slider"></div>
+					</dd>
+					<dt class="list__title title-secondary">Расскажите о себе</dt>
+					<dd class="list__content">
+						<div class="info">
+							<div class="info__txt">
+								Напишите несколько предложений, чем привлекла наша вакансия
+								и что вы ожидаете от работы у нас.
+							</div>
+							<textarea class="info__area" placeholder="Понравилась тем, что..."></textarea>
+							<button type="submit" class="info__btn btn">Готово</button>
 						</div>
-						<textarea class="info__area" placeholder="Понравилась тем, что..."></textarea>
-						<button type="submit" class="info__btn btn">Готово</button>
-					</div>
-					
-				</dd>
-			</dl>
+					</dd>
+				</dl>
+			</div>
 		</form>
 	</div>
 </div>
